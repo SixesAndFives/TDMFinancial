@@ -5,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import Image from "next/image"
 import Link from "next/link"
 import { useRef } from "react"
 import {
@@ -34,13 +33,15 @@ export default function Home() {
       <header className="sticky top-0 z-40 w-full border-b bg-white">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Image
-              src="/placeholder.svg?height=40&width=150"
-              alt="TDM Financial Logo"
-              width={150}
-              height={40}
-              style={{ width: "150px", height: "40px" }}
-            />
+            <div className="flex-shrink-0">
+              <img
+                src="/images/Logo.png"
+                alt="TDM Financial Logo"
+                width={100}
+                height={47}
+                className="h-12 w-auto"
+              />
+            </div>
           </div>
           <nav className="hidden md:flex gap-6">
             <Link href="#services" className="text-sm font-medium text-[#002b45] hover:text-[#f47c26]">
@@ -68,9 +69,8 @@ export default function Home() {
       </header>
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-28">
-          <div className="absolute inset-0 bg-[url('/placeholder.svg?height=800&width=1600')] bg-cover bg-center opacity-5"></div>
-          <div className="container relative z-10">
+        <section className="py-20 md:py-28">
+          <div className="container">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="space-y-6">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#002b45]">
@@ -88,13 +88,12 @@ export default function Home() {
                 </Button>
               </div>
               <div className="hidden lg:block">
-                <Image
-                  src="/placeholder.svg?height=500&width=600"
+                <img
+                  src="/images/Hero2.png"
                   alt="Financial Media Coverage"
                   width={600}
                   height={500}
-                  style={{ width: "600px", height: "500px" }}
-                  className="rounded-lg shadow-lg"
+                  className="w-full object-cover rounded-lg shadow-lg"
                 />
               </div>
             </div>
@@ -209,12 +208,12 @@ export default function Home() {
                 {/* Card 1 */}
                 <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
                   <div className="relative">
-                    <Image
+                    <img
                       src="/placeholder.svg?height=200&width=400&text=BioPharmCo%20Campaign"
                       alt="BioPharmCo Campaign"
                       width={400}
                       height={200}
-                      style={{ width: "400px", height: "200px" }}
+                      className="w-full h-48 object-cover"
                     />
                   </div>
                   <div className="p-6">
@@ -243,12 +242,12 @@ export default function Home() {
                 {/* Card 2 */}
                 <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
                   <div className="relative">
-                    <Image
+                    <img
                       src="/placeholder.svg?height=200&width=400&text=GreenTech%20Campaign"
                       alt="GreenTech Campaign"
                       width={400}
                       height={200}
-                      style={{ width: "400px", height: "200px" }}
+                      className="w-full h-48 object-cover"
                     />
                   </div>
                   <div className="p-6">
@@ -275,12 +274,12 @@ export default function Home() {
                 {/* Card 3 */}
                 <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
                   <div className="relative">
-                    <Image
+                    <img
                       src="/placeholder.svg?height=200&width=400&text=FinTechNova%20Campaign"
                       alt="FinTechNova Campaign"
                       width={400}
                       height={200}
-                      style={{ width: "400px", height: "200px" }}
+                      className="w-full h-48 object-cover"
                     />
                   </div>
                   <div className="p-6">
@@ -328,12 +327,11 @@ export default function Home() {
                       className="block"
                     >
                       <div className="group relative overflow-hidden rounded-lg">
-                        <Image
+                        <img
                           src="/images/ADURArticle.jpg"
                           alt="ADUR Article"
                           width={400}
                           height={200}
-                          style={{ width: "400px", height: "200px" }}
                           className="w-full h-48 object-cover transition-transform group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
@@ -349,12 +347,11 @@ export default function Home() {
                       className="block"
                     >
                       <div className="group relative overflow-hidden rounded-lg">
-                        <Image
+                        <img
                           src="/images/CRDLArticle.jpg"
                           alt="CRDL Article"
                           width={400}
                           height={200}
-                          style={{ width: "400px", height: "200px" }}
                           className="w-full h-48 object-cover transition-transform group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
@@ -370,12 +367,11 @@ export default function Home() {
                       className="block"
                     >
                       <div className="group relative overflow-hidden rounded-lg">
-                        <Image
+                        <img
                           src="/images/LEEFArticle.jpeg"
                           alt="LEEF Article"
                           width={400}
                           height={200}
-                          style={{ width: "400px", height: "200px" }}
                           className="w-full h-48 object-cover transition-transform group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
@@ -437,55 +433,58 @@ export default function Home() {
                 </TabsContent>
                 <TabsContent value="social" className="mt-0">
                   <div className="grid md:grid-cols-3 gap-6">
-                    <div className="group relative overflow-hidden rounded-lg border border-gray-200">
-                      <Image
+                    <div className="group relative overflow-hidden rounded-lg">
+                      <img
                         src="/images/ADURTwitter.png"
                         alt="ADUR Twitter Example"
                         width={400}
                         height={200}
-                        style={{ width: "400px", height: "200px" }}
                         className="w-full h-48 object-cover transition-transform group-hover:scale-105"
                       />
                       <div className="absolute top-4 left-4">
                         <Twitter className="h-6 w-6 text-[#1DA1F2]" />
                       </div>
-                      <div className="p-4">
-                        <h4 className="font-bold text-[#002b45]">Engaging Social Campaign</h4>
-                        <p className="text-sm text-[#444444]">Reached 25K+ investors in target demographic</p>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+                        <h4 className="text-white font-bold">CFN Media Twitter Campaign</h4>
+                        <p className="text-white/80 text-sm">
+                          Reached 500K+ targeted investors monthly through high-engagement posts and curated amplification
+                        </p>
                       </div>
                     </div>
-                    <div className="group relative overflow-hidden rounded-lg border border-gray-200">
-                      <Image
+                    <div className="group relative overflow-hidden rounded-lg">
+                      <img
                         src="/images/CRDLTwitter.png"
                         alt="CRDL Twitter Example"
                         width={400}
                         height={200}
-                        style={{ width: "400px", height: "200px" }}
                         className="w-full h-48 object-cover transition-transform group-hover:scale-105"
                       />
                       <div className="absolute top-4 left-4">
                         <Twitter className="h-6 w-6 text-[#1DA1F2]" />
                       </div>
-                      <div className="p-4">
-                        <h4 className="font-bold text-[#002b45]">Engaging Social Campaign</h4>
-                        <p className="text-sm text-[#444444]">Reached 25K+ investors in target demographic</p>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+                        <h4 className="text-white font-bold">SECFilings.com Twitter Campaign</h4>
+                        <p className="text-white/80 text-sm">
+                          Delivered 500K+ monthly impressions to a qualified audience of institutional and active retail investors
+                        </p>
                       </div>
                     </div>
-                    <div className="group relative overflow-hidden rounded-lg border border-gray-200">
-                      <Image
+                    <div className="group relative overflow-hidden rounded-lg">
+                      <img
                         src="/images/LEEFLinkedin.png"
                         alt="LEEF LinkedIn Example"
                         width={400}
                         height={200}
-                        style={{ width: "400px", height: "200px" }}
                         className="w-full h-48 object-cover transition-transform group-hover:scale-105"
                       />
                       <div className="absolute top-4 left-4">
                         <Linkedin className="h-6 w-6 text-[#0077B5]" />
                       </div>
-                      <div className="p-4">
-                        <h4 className="font-bold text-[#002b45]">Engaging Social Campaign</h4>
-                        <p className="text-sm text-[#444444]">Reached 25K+ investors in target demographic</p>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+                        <h4 className="text-white font-bold">SECFilings.com LinkedIn Campaign</h4>
+                        <p className="text-white/80 text-sm">
+                          Delivered curated impressions to tens of thousands of finance professionals through targeted outreach and precision messaging
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -695,12 +694,12 @@ export default function Home() {
                 </div>
                 <div className="flex justify-center md:justify-end">
                   <div className="relative w-full max-w-md aspect-[3/2]">
-                    <Image
-                      src="/placeholder.svg?height=300&width=450&text=TDM%20Financial"
+                    <img
+                      src="/images/about.png"
                       alt="TDM Financial"
                       width={450}
                       height={300}
-                      style={{ width: "450px", height: "300px" }}
+                      className="w-full h-80 object-cover"
                     />
                   </div>
                 </div>
@@ -718,65 +717,35 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {/* Testimonial Card 1 */}
               <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                <div className="mb-4">
-                  <Image
-                    src="/placeholder.svg?height=60&width=60&text=Logo"
-                    alt="Client Logo"
-                    width={60}
-                    height={60}
-                    style={{ width: "60px", height: "60px" }}
-                    className="rounded-full"
-                  />
-                </div>
                 <p className="text-[#333333] mb-6">
                   <span className="text-[#f47c26] text-2xl font-serif">"</span>
-                  We saw a clear lift in investor traffic after our first article went live. The team handled everything
-                  — fast, polished, and on-brand.
+                  TDM Financial has been amazing to work with, I cannot say enough about their ability to drive results. I wish I had met and hired them a few years earlier...
                   <span className="text-[#f47c26] text-2xl font-serif">"</span>
                 </p>
-                <p className="text-[#666666] text-sm font-medium">CEO, Nasdaq-listed Biotech Company</p>
+                <p className="text-[#002b45] font-medium">Chris Bunka</p>
+                <p className="text-[#666666] text-sm">CEO Lexaria</p>
               </div>
 
               {/* Testimonial Card 2 */}
               <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                <div className="mb-4">
-                  <Image
-                    src="/placeholder.svg?height=60&width=60&text=Logo"
-                    alt="Client Logo"
-                    width={60}
-                    height={60}
-                    style={{ width: "60px", height: "60px" }}
-                    className="rounded-full"
-                  />
-                </div>
                 <p className="text-[#333333] mb-6">
                   <span className="text-[#f47c26] text-2xl font-serif">"</span>
-                  TDM's email and video campaigns helped us reconnect with existing investors and generate new
-                  conversations ahead of our earnings release.
+                  Daniel has been a pleasure to work with. In the quickly evolving online investor relations landscape, Daniel and his group at TDM Financial are strategic, innovative, and very professional to work with.
                   <span className="text-[#f47c26] text-2xl font-serif">"</span>
                 </p>
-                <p className="text-[#666666] text-sm font-medium">Head of IR, OTCQB Energy Company</p>
+                <p className="text-[#002b45] font-medium">John Nesbett</p>
+                <p className="text-[#666666] text-sm">Owner of Institutional Marketing Services</p>
               </div>
 
               {/* Testimonial Card 3 */}
               <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                <div className="mb-4">
-                  <Image
-                    src="/placeholder.svg?height=60&width=60&text=Logo"
-                    alt="Client Logo"
-                    width={60}
-                    height={60}
-                    style={{ width: "60px", height: "60px" }}
-                    className="rounded-full"
-                  />
-                </div>
                 <p className="text-[#333333] mb-6">
                   <span className="text-[#f47c26] text-2xl font-serif">"</span>
-                  Their media platform gave us exposure we hadn't been able to achieve through traditional IR channels.
-                  Great reporting, great execution.
+                  Daniel is truly the man! He is smart, helpful, and one of the few who can get the job done in any environment. I recommend him rain or shine.
                   <span className="text-[#f47c26] text-2xl font-serif">"</span>
                 </p>
-                <p className="text-[#666666] text-sm font-medium">CMO, CSE-listed Tech Company</p>
+                <p className="text-[#002b45] font-medium">Chris Lahiji</p>
+                <p className="text-[#666666] text-sm">Private Investor & President of LD Micro</p>
               </div>
             </div>
           </div>
@@ -848,14 +817,15 @@ export default function Home() {
         <div className="container py-12">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <Image
-                src="/placeholder.svg?height=40&width=150"
-                alt="TDM Financial Logo"
-                width={150}
-                height={40}
-                style={{ width: "150px", height: "40px" }}
-                className="h-10 w-auto mb-4 brightness-200"
-              />
+              <div className="flex-shrink-0">
+                <img
+                  src="/images/LogoTransparent.png"
+                  alt="TDM Financial Logo"
+                  width={100}
+                  height={47}
+                  className="h-12 w-auto"
+                />
+              </div>
               <p className="text-sm text-white/70 mt-4">
                 Connecting public companies with qualified investors through strategic media coverage.
               </p>
