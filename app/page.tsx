@@ -291,7 +291,9 @@ export default function Home() {
                     </div>
                     <div className="mb-4 pb-4 border-b border-gray-200">
                       <p className="text-sm font-medium text-[#002b45] mb-1">Solution:</p>
-                      <p className="text-[#444444]">Executive Q&A video and follow-up investor alert</p>
+                      <p className="text-[#444444]">
+                        Executive Q&A video and follow-up investor alert
+                      </p>
                     </div>
                     <div className="mb-4">
                       <p className="text-sm font-medium text-[#002b45] mb-2">Result:</p>
@@ -319,76 +321,173 @@ export default function Home() {
                 </TabsList>
                 <TabsContent value="articles" className="mt-0">
                   <div className="grid md:grid-cols-3 gap-6">
-                    {[1, 2, 3].map((item) => (
-                      <div key={item} className="group relative overflow-hidden rounded-lg">
+                    <Link 
+                      href="https://www.secfilings.com/news/plastic-recycling-solutions-comparing-pyrolysis-and-hydrochemolytic-tm-technology"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <div className="group relative overflow-hidden rounded-lg">
                         <Image
-                          src={`/placeholder.svg?height=200&width=400&text=Article%20${item}`}
-                          alt={`Article Example ${item}`}
+                          src="/images/ADURArticle.jpg"
+                          alt="ADUR Article"
                           width={400}
                           height={200}
                           style={{ width: "400px", height: "200px" }}
                           className="w-full h-48 object-cover transition-transform group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
-                          <h4 className="text-white font-bold">Company Announces Breakthrough Technology</h4>
+                          <h4 className="text-white font-bold">Plastic Recycling Solutions? Comparing Pyrolysis and Hydrochemolytic Technology</h4>
                           <p className="text-white/80 text-sm">Published on SECFilings.com</p>
                         </div>
                       </div>
-                    ))}
+                    </Link>
+                    <Link 
+                      href="https://cfnmedianews.com/the-growing-market-for-recurrent-pericarditis-therapies/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <div className="group relative overflow-hidden rounded-lg">
+                        <Image
+                          src="/images/CRDLArticle.jpg"
+                          alt="CRDL Article"
+                          width={400}
+                          height={200}
+                          style={{ width: "400px", height: "200px" }}
+                          className="w-full h-48 object-cover transition-transform group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+                          <h4 className="text-white font-bold">The Growing Market for Recurrent Pericarditis Therapies</h4>
+                          <p className="text-white/80 text-sm">Published on CFN Media News</p>
+                        </div>
+                      </div>
+                    </Link>
+                    <Link 
+                      href="https://www.secfilings.com/news/why-is-california-s-premier-extraction-company-planting-a-massive-cannabis-farm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <div className="group relative overflow-hidden rounded-lg">
+                        <Image
+                          src="/images/LEEFArticle.jpeg"
+                          alt="LEEF Article"
+                          width={400}
+                          height={200}
+                          style={{ width: "400px", height: "200px" }}
+                          className="w-full h-48 object-cover transition-transform group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+                          <h4 className="text-white font-bold">Why is California's Premier Extraction Company Planting a Massive Cannabis Farm?</h4>
+                          <p className="text-white/80 text-sm">Published on SECFilings.com</p>
+                        </div>
+                      </div>
+                    </Link>
                   </div>
                 </TabsContent>
                 <TabsContent value="videos" className="mt-0">
                   <div className="grid md:grid-cols-3 gap-6">
-                    {[1, 2, 3].map((item) => (
-                      <div key={item} className="group relative overflow-hidden rounded-lg">
-                        <Image
-                          src={`/placeholder.svg?height=200&width=400&text=Video%20${item}`}
-                          alt={`Video Example ${item}`}
-                          width={400}
-                          height={200}
-                          style={{ width: "400px", height: "200px" }}
-                          className="w-full h-48 object-cover transition-transform group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="h-16 w-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                            <div className="h-12 w-12 rounded-full bg-[#f47c26] flex items-center justify-center">
-                              <Youtube className="h-6 w-6 text-white" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
-                          <h4 className="text-white font-bold">CEO Interview: Market Expansion Plans</h4>
-                          <p className="text-white/80 text-sm">CFN Media News</p>
-                        </div>
+                    <div className="group relative overflow-hidden rounded-lg">
+                      <video
+                        src="/images/Banxa.mp4"
+                        poster="/images/BNXAThumbnail.png"
+                        width={400}
+                        height={200}
+                        className="w-full h-48 object-cover"
+                        controls
+                        preload="metadata"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4 pointer-events-none">
+                        <h4 className="text-white font-bold">CEO Interview</h4>
+                        <p className="text-white/80 text-sm">SECFilings.com</p>
                       </div>
-                    ))}
+                    </div>
+                    <div className="group relative overflow-hidden rounded-lg">
+                      <video
+                        src="/images/CRDL.mp4"
+                        poster="/images/CRDLThumbnail.png"
+                        width={400}
+                        height={200}
+                        className="w-full h-48 object-cover"
+                        controls
+                        preload="metadata"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4 pointer-events-none">
+                        <h4 className="text-white font-bold">Video Press Release</h4>
+                        <p className="text-white/80 text-sm">SECFilings.com</p>
+                      </div>
+                    </div>
+                    <div className="group relative overflow-hidden rounded-lg">
+                      <video
+                        src="/images/ADUR.mp4"
+                        poster="/images/ADURThumbnail.png"
+                        width={400}
+                        height={200}
+                        className="w-full h-48 object-cover"
+                        controls
+                        preload="metadata"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4 pointer-events-none">
+                        <h4 className="text-white font-bold">Company Profile</h4>
+                        <p className="text-white/80 text-sm">SECFilings.com</p>
+                      </div>
+                    </div>
                   </div>
                 </TabsContent>
                 <TabsContent value="social" className="mt-0">
                   <div className="grid md:grid-cols-3 gap-6">
-                    {[1, 2, 3].map((item) => (
-                      <div key={item} className="group relative overflow-hidden rounded-lg border border-gray-200">
-                        <Image
-                          src={`/placeholder.svg?height=200&width=400&text=Social%20${item}`}
-                          alt={`Social Media Example ${item}`}
-                          width={400}
-                          height={200}
-                          style={{ width: "400px", height: "200px" }}
-                          className="w-full h-48 object-cover transition-transform group-hover:scale-105"
-                        />
-                        <div className="absolute top-4 left-4">
-                          {item % 2 === 0 ? (
-                            <Twitter className="h-6 w-6 text-[#1DA1F2]" />
-                          ) : (
-                            <Linkedin className="h-6 w-6 text-[#0077B5]" />
-                          )}
-                        </div>
-                        <div className="p-4">
-                          <h4 className="font-bold text-[#002b45]">Engaging Social Campaign</h4>
-                          <p className="text-sm text-[#444444]">Reached 25K+ investors in target demographic</p>
-                        </div>
+                    <div className="group relative overflow-hidden rounded-lg border border-gray-200">
+                      <Image
+                        src="/images/ADURTwitter.png"
+                        alt="ADUR Twitter Example"
+                        width={400}
+                        height={200}
+                        style={{ width: "400px", height: "200px" }}
+                        className="w-full h-48 object-cover transition-transform group-hover:scale-105"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <Twitter className="h-6 w-6 text-[#1DA1F2]" />
                       </div>
-                    ))}
+                      <div className="p-4">
+                        <h4 className="font-bold text-[#002b45]">Engaging Social Campaign</h4>
+                        <p className="text-sm text-[#444444]">Reached 25K+ investors in target demographic</p>
+                      </div>
+                    </div>
+                    <div className="group relative overflow-hidden rounded-lg border border-gray-200">
+                      <Image
+                        src="/images/CRDLTwitter.png"
+                        alt="CRDL Twitter Example"
+                        width={400}
+                        height={200}
+                        style={{ width: "400px", height: "200px" }}
+                        className="w-full h-48 object-cover transition-transform group-hover:scale-105"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <Twitter className="h-6 w-6 text-[#1DA1F2]" />
+                      </div>
+                      <div className="p-4">
+                        <h4 className="font-bold text-[#002b45]">Engaging Social Campaign</h4>
+                        <p className="text-sm text-[#444444]">Reached 25K+ investors in target demographic</p>
+                      </div>
+                    </div>
+                    <div className="group relative overflow-hidden rounded-lg border border-gray-200">
+                      <Image
+                        src="/images/LEEFLinkedin.png"
+                        alt="LEEF LinkedIn Example"
+                        width={400}
+                        height={200}
+                        style={{ width: "400px", height: "200px" }}
+                        className="w-full h-48 object-cover transition-transform group-hover:scale-105"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <Linkedin className="h-6 w-6 text-[#0077B5]" />
+                      </div>
+                      <div className="p-4">
+                        <h4 className="font-bold text-[#002b45]">Engaging Social Campaign</h4>
+                        <p className="text-sm text-[#444444]">Reached 25K+ investors in target demographic</p>
+                      </div>
+                    </div>
                   </div>
                 </TabsContent>
               </Tabs>
