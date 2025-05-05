@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Link from "next/link"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import {
   BarChart3,
   FileText,
@@ -23,9 +23,52 @@ import {
 
 export default function Home() {
   const contactRef = useRef<HTMLElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const scrollToContact = () => {
     contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get('name'),
+      company: formData.get('company'),
+      email: formData.get('email'),
+      ticker: formData.get('ticker'),
+      message: formData.get('message'),
+      submittedAt: new Date().toISOString()
+    };
+
+    try {
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      
+      if (!response.ok) throw new Error(result.error || 'Submission failed');
+      
+      setSubmitStatus('success');
+      form.reset();
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error('Submission error:', error.message);
+      }
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -763,19 +806,19 @@ export default function Home() {
               </div>
               <Card className="border-0 shadow-lg">
                 <CardContent className="p-8">
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label htmlFor="name" className="text-sm font-medium text-[#002b45]">
                           Name
                         </label>
-                        <Input id="name" placeholder="Your name" required />
+                        <Input name="name" id="name" placeholder="Your name" required />
                       </div>
                       <div className="space-y-2">
                         <label htmlFor="company" className="text-sm font-medium text-[#002b45]">
                           Company
                         </label>
-                        <Input id="company" placeholder="Your company" required />
+                        <Input name="company" id="company" placeholder="Your company" required />
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -783,13 +826,13 @@ export default function Home() {
                         <label htmlFor="email" className="text-sm font-medium text-[#002b45]">
                           Email
                         </label>
-                        <Input id="email" type="email" placeholder="Your email" required />
+                        <Input name="email" id="email" type="email" placeholder="Your email" required />
                       </div>
                       <div className="space-y-2">
                         <label htmlFor="ticker" className="text-sm font-medium text-[#002b45]">
                           Ticker Symbol (optional)
                         </label>
-                        <Input id="ticker" placeholder="e.g., AAPL" />
+                        <Input name="ticker" id="ticker" placeholder="e.g., AAPL" />
                       </div>
                     </div>
                     <div className="space-y-2">
@@ -797,14 +840,26 @@ export default function Home() {
                         Message
                       </label>
                       <Textarea
+                        name="message"
                         id="message"
                         placeholder="Tell us about your investor relations goals"
                         className="min-h-[120px]"
+                        required
                       />
                     </div>
-                    <Button className="w-full bg-[#f47c26] hover:bg-[#f47c26]/90 text-white py-6 h-auto text-lg">
-                      Request More Info
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-[#f47c26] hover:bg-[#f47c26]/90 text-white py-6 h-auto text-lg"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? 'Submitting...' : 'Request More Info'}
                     </Button>
+                    {submitStatus === 'success' && (
+                      <p className="text-green-600 text-center">Thank you for your submission!</p>
+                    )}
+                    {submitStatus === 'error' && (
+                      <p className="text-red-600 text-center">Something went wrong. Please try again.</p>
+                    )}
                     <p className="text-xs text-center text-[#444444]">We never share your contact information.</p>
                   </form>
                 </CardContent>
@@ -893,7 +948,7 @@ export default function Home() {
                 </Link>
               </div>
               <div className="mt-4">
-                <p className="text-sm text-white/70">Subscribe to our investor newsletter</p>
+                <p className="text-xs text-center text-[#444444]">Subscribe to our investor newsletter</p>
                 <div className="mt-2 flex">
                   <Input
                     placeholder="Your email"
