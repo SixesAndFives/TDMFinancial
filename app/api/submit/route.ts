@@ -1,9 +1,29 @@
 import { NextResponse } from 'next/server';
-import { writeFile } from 'fs/promises';
-import { join } from 'path';
+import { createClient } from '@supabase/supabase-js';
+
+function isValidEmail(email: string) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
 
 export async function POST(request: Request) {
   try {
+    // Use SUPABASE_URL and SUPABASE_ANON_KEY for server-side
+    const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    if (!supabaseUrl || !supabaseKey) {
+      console.error('Environment variables:', {
+        url: !!supabaseUrl,
+        key: !!supabaseKey
+      });
+      throw new Error('Missing Supabase environment variables');
+    }
+
+    const supabase = createClient(supabaseUrl, supabaseKey, {
+      auth: { persistSession: false }
+    });
+
     const data = await request.json();
     
     // Validate required fields
@@ -14,37 +34,47 @@ export async function POST(request: Request) {
       );
     }
 
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const filename = `submission-${timestamp}.json`;
-    const filepath = join(process.cwd(), 'public', 'submissions', filename);
-    
-    try {
-      await writeFile(filepath, JSON.stringify(data, null, 2), 'utf-8');
-      console.log('Submission saved:', filepath);
-      
-      return NextResponse.json({ 
-        success: true, 
-        filename,
-        message: 'Submission received successfully' 
-      });
-    } catch (writeError: any) {
-      console.error('File write error:', writeError);
+    // Validate email format
+    if (!isValidEmail(data.email)) {
       return NextResponse.json(
-        { 
-          success: false, 
-          error: 'Failed to save submission',
-          details: writeError.message 
-        },
-        { status: 500 }
+        { success: false, error: 'Invalid email format' },
+        { status: 400 }
       );
     }
+
+    // Clean and prepare data
+    const cleanData = {
+      name: data.name.trim(),
+      company: data.company.trim(),
+      email: data.email.trim().toLowerCase(),
+      ticker: data.ticker ? data.ticker.trim().toUpperCase() : null,
+      message: data.message.trim()
+    };
+
+    console.log('Attempting to insert data:', cleanData);
+
+    const { error } = await supabase
+      .from('tdm_submissions')
+      .insert([cleanData]);
+
+    if (error) {
+      console.error('Supabase error details:', error);
+      throw error;
+    }
+    
+    return NextResponse.json({ 
+      success: true,
+      message: 'Submission received successfully' 
+    });
   } catch (error: any) {
-    console.error('Request processing error:', error);
+    console.error('Full submission error:', error);
     return NextResponse.json(
       { 
         success: false, 
-        error: 'Failed to process submission',
-        details: error.message 
+        error: 'Failed to save submission',
+        details: error.message,
+        code: error.code,
+        hint: error.hint || undefined
       },
       { status: 500 }
     );

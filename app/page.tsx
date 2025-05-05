@@ -42,8 +42,7 @@ export default function Home() {
       company: formData.get('company'),
       email: formData.get('email'),
       ticker: formData.get('ticker'),
-      message: formData.get('message'),
-      submittedAt: new Date().toISOString()
+      message: formData.get('message')
     };
 
     try {
