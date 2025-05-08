@@ -162,7 +162,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-base font-bold text-[#002b45] mb-1">SECFilings.com</h3>
                   <p className="text-sm text-[#444444]">
-                    Native article coverage distributed across our network of financial news sites.
+                    Original articles and company news posted, distributed, and featured in our filing alerts.
                   </p>
                 </CardContent>
               </Card>
@@ -173,7 +173,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-base font-bold text-[#002b45] mb-1">CFN Media News</h3>
                   <p className="text-sm text-[#444444]">
-                    Professional video production & YouTube syndication to reach visual audiences.
+                    Content posted and distributed to our micro- and small-cap investor audience.
                   </p>
                 </CardContent>
               </Card>
@@ -251,32 +251,27 @@ export default function Home() {
                 <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
                   <div className="relative">
                     <img
-                      src="/placeholder.svg?height=200&width=400&text=BioPharmCo%20Campaign"
-                      alt="BioPharmCo Campaign"
+                      src="/images/AduroCase.jpeg"
+                      alt="Aduro Clean Technologies Case Study"
                       width={400}
                       height={200}
                       className="w-full h-48 object-cover"
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-[#002b45] mb-1">BioPharmCo (OTCQB: BPHC)</h3>
+                    <h3 className="text-xl font-bold text-[#002b45] mb-1">Aduro Clean Technologies (NASDAQ: ADUR) (CSE: ACT)</h3>
+                    <p className="text-[#444444] mb-4 pb-4 border-b border-gray-200">Emerging plastic recycling technology based in Canada.</p>
                     <div className="mb-4 pb-4 border-b border-gray-200">
                       <p className="text-sm font-medium text-[#002b45] mb-1">Challenge:</p>
-                      <p className="text-[#444444]">Struggling to gain visibility post-8-K filing</p>
+                      <p className="text-[#444444]">Grow and engage US investors ahead of and through NASDAQ listing.</p>
                     </div>
                     <div className="mb-4 pb-4 border-b border-gray-200">
                       <p className="text-sm font-medium text-[#002b45] mb-1">Solution:</p>
-                      <p className="text-[#444444]">
-                        Featured article on SECFilings.com and video interview on CFN Media
-                      </p>
+                      <p className="text-[#444444]">Strategic social media promotions, extensive email outreach, target US retail investors.</p>
                     </div>
                     <div className="mb-4">
-                      <p className="text-sm font-medium text-[#002b45] mb-2">Result:</p>
-                      <ul className="list-disc pl-5 text-[#444444] space-y-1">
-                        <li>7,200+ article views</li>
-                        <li>3,100 video plays</li>
-                        <li>14 investor inquiries in 10 days</li>
-                      </ul>
+                      <p className="text-sm font-medium text-[#002b45] mb-1">Result:</p>
+                      <p className="text-[#444444]">Successful NASDAQ IPO, increased US investor volume.</p>
                     </div>
                   </div>
                 </div>
@@ -285,30 +280,27 @@ export default function Home() {
                 <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
                   <div className="relative">
                     <img
-                      src="/placeholder.svg?height=200&width=400&text=GreenTech%20Campaign"
-                      alt="GreenTech Campaign"
+                      src="/images/CRDLCase.jpeg"
+                      alt="Cardiol Therapeutics Case Study"
                       width={400}
                       height={200}
                       className="w-full h-48 object-cover"
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-[#002b45] mb-1">GreenTech Energy (CSE: GTEC)</h3>
+                    <h3 className="text-xl font-bold text-[#002b45] mb-1">Cardiol Therapeutics (NASDAQ: CRDL) (TSX:V: CRDL)</h3>
+                    <p className="text-[#444444] mb-4 pb-4 border-b border-gray-200">Clinical stage pharmaceutical developer focused on heart conditions.</p>
                     <div className="mb-4 pb-4 border-b border-gray-200">
                       <p className="text-sm font-medium text-[#002b45] mb-1">Challenge:</p>
-                      <p className="text-[#444444]">Needed a multi-channel launch around sustainability announcement</p>
+                      <p className="text-[#444444]">Articulate value proposition and keep investors engaged through the slow clinical trial process.</p>
                     </div>
                     <div className="mb-4 pb-4 border-b border-gray-200">
                       <p className="text-sm font-medium text-[#002b45] mb-1">Solution:</p>
-                      <p className="text-[#444444]">Custom video, Twitter push, and investor email blast</p>
+                      <p className="text-[#444444]">Consistent content creation, disease-specific market overviews, engage biotech investors.</p>
                     </div>
                     <div className="mb-4">
-                      <p className="text-sm font-medium text-[#002b45] mb-2">Result:</p>
-                      <ul className="list-disc pl-5 text-[#444444] space-y-1">
-                        <li>25,000+ social impressions</li>
-                        <li>9.4% email open rate</li>
-                        <li>Picked up by 3 financial blogs</li>
-                      </ul>
+                      <p className="text-sm font-medium text-[#002b45] mb-1">Result:</p>
+                      <p className="text-[#444444]">Supported NASDAQ listing, long-term client, writing for corporate content, leverage deep understanding of Cardiol.</p>
                     </div>
                   </div>
                 </div>
@@ -317,32 +309,27 @@ export default function Home() {
                 <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
                   <div className="relative">
                     <img
-                      src="/placeholder.svg?height=200&width=400&text=FinTechNova%20Campaign"
-                      alt="FinTechNova Campaign"
+                      src="/images/LISCase.jpg"
+                      alt="Lithium South Development Corp Case Study"
                       width={400}
                       height={200}
                       className="w-full h-48 object-cover"
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-[#002b45] mb-1">FinTechNova (NASDAQ: FTNV)</h3>
+                    <h3 className="text-xl font-bold text-[#002b45] mb-1">Lithium South Development Corp (TSX-V: LIS)(OTCQB: LISMF)</h3>
+                    <p className="text-[#444444] mb-4 pb-4 border-b border-gray-200">Lithium explorer/developer with a proven resource in Argentina's Lithium Triangle.</p>
                     <div className="mb-4 pb-4 border-b border-gray-200">
                       <p className="text-sm font-medium text-[#002b45] mb-1">Challenge:</p>
-                      <p className="text-[#444444]">Wanted more retail investor engagement before earnings</p>
+                      <p className="text-[#444444]">Educate investors about the lithium market and value of LIS' resource ahead of potential exit.</p>
                     </div>
                     <div className="mb-4 pb-4 border-b border-gray-200">
                       <p className="text-sm font-medium text-[#002b45] mb-1">Solution:</p>
-                      <p className="text-[#444444]">
-                        Executive Q&A video and follow-up investor alert
-                      </p>
+                      <p className="text-[#444444]">Industry deep dives, social media videos, green energy targeting.</p>
                     </div>
                     <div className="mb-4">
-                      <p className="text-sm font-medium text-[#002b45] mb-2">Result:</p>
-                      <ul className="list-disc pl-5 text-[#444444] space-y-1">
-                        <li>5,600 YouTube views</li>
-                        <li>2,100 clicks to investor presentation</li>
-                        <li>Increase in IR website traffic (week-over-week)</li>
-                      </ul>
+                      <p className="text-sm font-medium text-[#002b45] mb-1">Result:</p>
+                      <p className="text-[#444444]">Two year engagement through a depressed lithium market leading up to exit LOI.</p>
                     </div>
                   </div>
                 </div>
@@ -578,7 +565,7 @@ export default function Home() {
                   <div className="bg-white p-4 rounded-lg shadow-sm">
                     <h3 className="font-bold text-[#002b45] mb-2">Step 1: Intro Call</h3>
                     <p className="text-sm text-[#444444]">
-                      We learn about your company, your goals, and ideal investor targets.
+                      We learn about your company, your goals, and ideal investor targets. You learn about our process.
                     </p>
                   </div>
                 </div>
