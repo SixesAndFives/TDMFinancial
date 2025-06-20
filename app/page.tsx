@@ -780,6 +780,34 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Capital Introductions Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#002b45] mb-4">
+                Capital Introductions
+              </h2>
+              <p className="text-xl text-[#f47c26] mb-8 font-medium">
+                A direct path to long-term capital — available by invitation only.
+              </p>
+              <div className="space-y-6 text-lg text-[#444444]">
+                <p>
+                  TDM Financial collaborates with select family offices and private capital groups to identify public companies with exceptional leadership, strategic clarity, and meaningful growth potential.
+                </p>
+                <p>
+                  When we reach out, it's because we've already done the work. We've reviewed your filings, your roadmap, and your recent activity — and we see the foundation for something more. If you've received a note from us, consider it a serious opportunity.
+                </p>
+                <p>
+                  The next step is a private strategy session with our deal team. If there's alignment, we facilitate a direct introduction to our capital partners.
+                </p>
+                <p>
+                  We're not here to sell you anything. We're here to determine if you're the right fit for a longer-term relationship — one that combines capital support with trusted investor positioning.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Lead Capture Section */}
         <section id="contact" ref={contactRef} className="py-16">
           <div className="container">
