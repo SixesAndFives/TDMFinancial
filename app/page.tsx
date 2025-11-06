@@ -223,26 +223,10 @@ export default function Home() {
               </Card>
             </div>
 
-            {/* Ready to Talk CTA Section */}
-            <section className="py-4 bg-[#eaf2f7]">
-              <div className="container">
-                <div className="max-w-[800px] mx-auto text-center">
-                  <h2 className="text-2xl font-bold text-[#002b45] mb-2">Ready to Talk?</h2>
-                  <p className="text-base text-[#444444] mb-3">
-                    Let us show you how TDM Financial can help your company get in front of the right investors.
-                  </p>
-                  <Button
-                    className="bg-[#f47c26] hover:bg-[#f47c26]/90 text-white px-6 py-2 h-auto text-base rounded-md transition-colors"
-                    onClick={scrollToContact}
-                  >
-                    Request More Info
-                  </Button>
-                </div>
-              </div>
-            </section>
+            
 
             {/* Case Studies Section - Moved above Example Content */}
-            <div id="case-studies" className="mt-16 mb-16">
+            {false && ( <div id="case-studies" className="mt-16 mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-[#002b45] mb-12 text-center">
                 See How We Help Public Companies Get Noticed
               </h2>
@@ -335,9 +319,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            )}
 
             {/* Example Content */}
-            <div id="investor-content" className="mt-16">
+            {false && ( <div id="investor-content" className="mt-16">
               <h3 className="text-2xl font-bold text-[#002b45] mb-6 text-center">
                 Investor-Focused Content That Drives Engagement
               </h3>
@@ -520,6 +505,7 @@ export default function Home() {
                 </TabsContent>
               </Tabs>
             </div>
+            )}
           </div>
         </section>
 
