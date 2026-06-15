@@ -32,6 +32,14 @@
     --chart-4: 316 70% 50%;
     --chart-5: 175 84% 32%;
     --chart-6: 48 96% 53%;
+
+    --font-serif: var(--font-source-serif), Georgia, serif;
+    --color-navy: #0f2747;
+    --color-navy-dark: #0a1c33;
+    --color-navy-light: #1a3a63;
+    --color-gold: #c8a24a;
+    --color-steel: #5b7494;
+    --color-mist: #f4f6f9;
   }
 
   .dark {
