@@ -73,3 +73,45 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* --- /getstarted landing page: scoped CFN Media + TDM dark theme --- */
+.getstarted {
+  color-scheme: dark;
+  --background: 217.4 55% 8.9%;
+  --foreground: 211.2 30.4% 96.3%;
+  --card: 217.3 43.4% 13.7%;
+  --card-foreground: 211.2 30.4% 96.3%;
+  --popover: 217.3 43.4% 13.7%;
+  --popover-foreground: 211.2 30.4% 96.3%;
+  --gs-primary: 35 86.3% 61.3%;
+  --gs-primary-foreground: 217.4 57.2% 10%;
+  --secondary: 114.9 40.3% 47.4%;
+  --secondary-foreground: 0 0% 98.7%;
+  --muted: 217.2 31% 17.4%;
+  --muted-foreground: 214 21.6% 80.3%;
+  --accent: 114.9 40.3% 47.4%;
+  --accent-foreground: 0 0% 98.7%;
+  --destructive: 357.9 84.2% 56.8%;
+  --destructive-foreground: 211.2 30.4% 96.3%;
+  --border: 211.2 30.4% 96.3%;
+  --input: 211.2 30.4% 96.3%;
+  --ring: 35 86.3% 61.3%;
+
+  /* Aliases for inline SVG references (adur-chart uses var(--color-*)) */
+  --color-secondary: hsl(var(--secondary));
+  --color-border: hsl(var(--border) / 0.12);
+  --color-background: hsl(var(--background));
+
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* The landing theme's border color carries built-in alpha (~12%); reapply it
+   here since these utilities expect an opaque triplet inside this scope. */
+.getstarted .border-border {
+  border-color: hsl(var(--border) / 0.12);
+}
+.getstarted .border-border\/60 {
+  border-color: hsl(var(--border) / 0.072);
+}

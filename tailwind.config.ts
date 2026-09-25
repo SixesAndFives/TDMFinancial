@@ -57,10 +57,14 @@ const config = {
           navy: "#002b45",
           orange: "#f47c26",
         },
+        "gs-primary": "hsl(var(--gs-primary) / <alpha-value>)",
+        "gs-primary-foreground":
+          "hsl(var(--gs-primary-foreground) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["var(--font-ibm-plex-sans)"],
         serif: ["var(--font-serif)"],
+        display: ["var(--font-archivo)", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
