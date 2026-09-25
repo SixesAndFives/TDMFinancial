@@ -3,7 +3,7 @@ import Image from "next/image"
 const approach = [
   {
     title: "Powerful visual content",
-    body: "We create powerful visual content that conveys ADUR's authentic message and captures investor attention.",
+    body: "We create powerful visual content that conveys this company's authentic message and captures investor attention.",
   },
   {
     title: "Targeted platform reach",
@@ -34,7 +34,7 @@ const outcomes = [
   },
   {
     stat: "Organic",
-    label: "Investors sharing the ADUR story with followers",
+    label: "Investors sharing the story with followers",
   },
 ]
 
@@ -44,14 +44,14 @@ export function CaseStudySection() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
           <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-gold)]">
-            Case Study — Aduro Clean Technologies (NASDAQ: ADUR)
+            Case Study — This Company
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-[var(--color-navy)] md:text-4xl text-balance">
             Generating Critical Exposure Among Investors and Influencers
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
             {
-              "TDM Financial has covered Aduro Clean Technologies since November 2024. During this period, the stock moved from approximately $2 per share to over $13 per share."
+              "TDM Financial has covered this company since November 2024. During this period, the stock moved from approximately $2 per share to over $13 per share."
             }
           </p>
         </div>
@@ -59,15 +59,15 @@ export function CaseStudySection() {
         {/* Chart */}
         <div className="mt-10 overflow-hidden rounded-2xl border border-border bg-card p-3 shadow-lg md:p-4">
           <Image
-            src="/landing/adur-chart.png"
-            alt="ADUR (Aduro Clean Technologies) 5-year stock chart showing price appreciation from approximately $5 to over $17, currently $14.40"
+            src="/landing/stock-chart.png"
+            alt="5-year stock chart showing significant price appreciation"
             width={872}
             height={628}
             className="h-auto w-full rounded-lg"
             priority
           />
           <p className="px-2 pb-1 pt-3 text-center text-xs text-muted-foreground">
-            ADUR share price experienced significant appreciation during our coverage. Source: ChartIQ / EDGAR Online.
+            Share price experienced significant appreciation during our coverage. Source: ChartIQ / EDGAR Online.
           </p>
         </div>
 
@@ -116,12 +116,6 @@ export function CaseStudySection() {
             ))}
           </div>
         </div>
-
-        <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-muted-foreground">
-          {
-            "TDM Financial does not work directly with Aduro Clean Technologies or any related party. Our coverage of Aduro is initiated solely by the TDM Financial team."
-          }
-        </p>
       </div>
     </section>
   )

@@ -11,8 +11,8 @@ export function CtaSection() {
             Let&apos;s Discuss Your Company
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            Book a brief strategy call to learn how TDM Financial helps public
-            companies increase investor visibility and engagement.
+            Schedule an appointment to learn about this company and how TDM
+            Financial helped drive investor visibility and engagement.
           </p>
         </div>
 
