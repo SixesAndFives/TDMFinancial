@@ -18,8 +18,14 @@ export function FilmVideo() {
   }, [])
 
   return (
-    <section id="film" className="border-b border-border/60 bg-card/40">
-      <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
+    <section className="border-b border-border/60 bg-card/40">
+      <div className="mx-auto max-w-6xl px-4 pb-12 pt-10 md:px-6 md:pb-14 md:pt-12">
+        <span className="text-sm font-semibold uppercase tracking-[0.14em] text-gs-primary">
+          Film Production
+        </span>
+        <h1 className="mb-8 mt-5 text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl">
+          Cinematic short films that bring your physical assets to life.
+        </h1>
         <div className="overflow-hidden rounded-2xl border border-border bg-black">
           <video
             ref={ref}

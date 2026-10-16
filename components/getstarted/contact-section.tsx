@@ -13,18 +13,23 @@ const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent(
   "Hi Frank,\n\nI saw the CFN Media + TDM Financial announcement and I'd like to learn more about engaging your work for our company.\n\nCompany / ticker:\nBest way to reach me:\n\nThanks,",
 )}`
 
-export function ContactSection() {
+export function ContactSection({
+  title = "Let’s talk about your campaign.",
+  body = "Pick a time that works for you, or reach out directly. We’ll show you exactly how we’d reach investors for your company.",
+}: {
+  title?: string
+  body?: string
+}) {
   return (
     <section id="contact" className="border-b border-border/60">
       <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
             <h2 className="font-display text-3xl font-bold tracking-tight text-balance md:text-4xl">
-              Let&apos;s talk about your campaign.
+              {title}
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground text-pretty">
-              Pick a time that works for you, or reach out directly. We&apos;ll show you exactly how
-              we&apos;d reach investors for your company.
+              {body}
             </p>
 
             <div className="mt-6 rounded-xl border border-border bg-card p-5">

@@ -5,7 +5,7 @@ const services = [
     icon: FileText,
     title: "Pre-production",
     description:
-      "Pre-production scripting with an interview of leadership on site.",
+      "Pre-production storyboarding and scripting that incorporates an on-site interview of leadership.",
   },
   {
     icon: Video,
@@ -24,7 +24,7 @@ const services = [
 export function FilmServices() {
   return (
     <section className="border-b border-border/60">
-      <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
+      <div className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-14">
         <div className="max-w-3xl">
           <span className="text-sm font-semibold uppercase tracking-wider text-gs-primary">
             Services
