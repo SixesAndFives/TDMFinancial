@@ -3,7 +3,7 @@ import { Button } from "@/components/getstarted/button"
 import { Mail, Phone, Calendar } from "lucide-react"
 
 const CALENDLY_URL = "https://calendly.com/frankcfn"
-const EMAIL = "flane@cfnmedia.com"
+const EMAIL = "flane@tdmfinancial.com"
 const PHONE_DISPLAY = "(206) 369-7050"
 const PHONE_HREF = "+12063697050"
 
