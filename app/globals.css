@@ -74,9 +74,10 @@
   }
 }
 
-/* --- Landing pages (/getstarted, /filmproduction): scoped CFN Media + TDM dark theme --- */
+/* --- Landing pages (/getstarted, /filmproduction, /review): scoped CFN Media + TDM dark theme --- */
 .getstarted,
-.filmproduction {
+.filmproduction,
+.review-page {
   color-scheme: dark;
   --background: 217.4 55% 8.9%;
   --foreground: 211.2 30.4% 96.3%;
@@ -111,10 +112,12 @@
 /* The landing theme's border color carries built-in alpha (~12%); reapply it
    here since these utilities expect an opaque triplet inside this scope. */
 .getstarted .border-border,
-.filmproduction .border-border {
+.filmproduction .border-border,
+.review-page .border-border {
   border-color: hsl(var(--border) / 0.12);
 }
 .getstarted .border-border\/60,
-.filmproduction .border-border\/60 {
+.filmproduction .border-border\/60,
+.review-page .border-border\/60 {
   border-color: hsl(var(--border) / 0.072);
 }
